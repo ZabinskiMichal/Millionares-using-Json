@@ -1,6 +1,7 @@
 import com.google.gson.Gson;
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Main {
@@ -27,7 +28,9 @@ public class Main {
             System.out.println("Choose correct answer");
 
             String input = scanner.nextLine();
-            if(input == task.getCorrectAnswer()){
+            input = input.toUpperCase();
+            
+            if(input.equals(task.getCorrectAnswer())){
                 System.out.println("Good choice, you get a point");
                 score++;
             }else{
